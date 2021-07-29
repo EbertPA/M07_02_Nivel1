@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M07_02 Nivel 1</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        h1{
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        window.onload = inici;
+
+        function inici() {
+            // Exercici 1
+            console.log("-".repeat(40) + "\nExercici 1\n" + "-".repeat(40));
+            var nombre = "Ebert".toUpperCase();
+
+            //Convierte un string a un array
+            arrayNombre = Array.from(nombre);
+
+            //Recorrer el nuevo array
+            for (let iterator of arrayNombre) {
+                console.log(iterator);
+            }
+
+
+
+            // Exercici 2
+            arrayNombre = ['E', 'b', '1', 'e', 'r', 't'];
+            console.log("\n" + "-".repeat(40) + "\nExercici 2\n" + "-".repeat(40));
+            for (let iterator of arrayNombre) {
+                if (iterator.match(/[aeiou]/gi)) {
+                    console.log("Vocal: " + iterator);
+                } else if (iterator.match(/[0-9]/gi)) {
+                    console.log("Els noms de persones no contenen el número:" + iterator);
+                } else {
+                    console.log("Consonante:" + iterator);
+
+                }
+
+            }
+
+            // Exercici 3
+            console.log("\n" + "-".repeat(40) + "\nExercici 3\n" + "-".repeat(40));
+            var nombre = "Ebert".toUpperCase();
+            //Convierte un string a un array
+            arrayNombre = Array.from(nombre).sort();
+            var nuevo_array = new Map();
+            let count = 0;
+            let valor = arrayNombre[0];
+            arrayNombre.map(function (value, index) {
+                if (value == valor) {
+                    count++;
+                    nuevo_array[value] = count;
+                } else {
+                    count = 1;
+                    nuevo_array[value] = count;
+                }
+                valor = value;
+            });
+            console.log(nuevo_array);
+
+            // Exercici 4
+            console.log("\n" + "-".repeat(40) + "\nExercici 4\n" + "-".repeat(40));
+            var name = ['E', 'B', 'E', 'R', 'T'];
+            var surname = ['P', 'E', 'R', 'E', 'Z'];
+            var fullname = [...name, " ", ...surname];
+            console.log(fullname);
+
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>07_02 Nivel 1</h1>
+
+</body>
+
+</html>
